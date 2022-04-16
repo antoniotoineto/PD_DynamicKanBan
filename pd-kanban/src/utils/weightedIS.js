@@ -51,4 +51,4 @@ for(let i of values)
 	arr.push(new Job(i[0], i[1], i[2]))
 	
 let n = arr.length
-console.log("The optimal profit is", findMaxProfit(arr, n))
+//console.log("The optimal profit is", findMaxProfit(arr, n))

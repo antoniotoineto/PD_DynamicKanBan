@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import {findMaxProfit, Job} from './weightedIS'
 
 function App() {
   return (
