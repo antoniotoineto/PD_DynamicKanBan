@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Draggable } from "react-beautiful-dnd";
 import { Flex } from "reflexbox";
 import { Box } from "reflexbox";
-
+import "../../App.css";
 const TodoItem = ({ data, index }) => {
   return (
     <Draggable index={index} draggableId={data.id.toString()}>
@@ -11,9 +11,8 @@ const TodoItem = ({ data, index }) => {
           <Box
             style={{
               borderRadius: "7px",
-              backgroundImage:
-                "linear-gradient( 132.6deg,  rgba(71,139,214,1) 23.3%, rgba(37,216,211,1) 84.7% )",
             }}
+            className="glass"
             marginBottom="0.5rem"
           >
             <Box
