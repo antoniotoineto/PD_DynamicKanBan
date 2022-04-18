@@ -85,6 +85,7 @@ function App() {
 
   const resetTasks = () => {
     setTime(0);
+    setPoints(0);
     clearInterval(interval);
     setColumns([
       {
@@ -152,13 +153,22 @@ function App() {
   return (
     <>
       <Navbar />
-      <Box marginTop="12rem">
+      <Box marginTop="7.5rem">
         <Flex
           flexDirection="column"
           alignItems="center"
           style={{ gap: "2rem" }}
         >
-          <Typography fontSize="20px" fontWeight="600">
+          <Typography 
+            fontSize="20px" 
+            fontWeight="600" 
+            backgroundColor="#DCDCDC"
+            padding="0.8rem"
+            justifyContent="center"
+            style={{
+              borderRadius: "3px",
+            }}
+            >
             Total Points Done: {points}
           </Typography>
 

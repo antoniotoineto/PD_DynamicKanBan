@@ -9,7 +9,7 @@ const Navbar = () => {
         alignItems: "center",
       }}
     >
-      <h1>Greedy Weighted KanBan</h1>
+      <h1>Dynamic Weighted KanBan</h1>
     </AppBar>
   );
 };
