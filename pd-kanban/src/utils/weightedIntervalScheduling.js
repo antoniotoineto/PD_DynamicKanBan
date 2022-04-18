@@ -39,7 +39,7 @@ export default class WeightedIntervalScheduling {
     for (let i = this.sortedTasks.length - 1; i > 1; --i) {
       for (let j = i - 1; j > 0; --j) {
         if (
-          moment(this.sortedTasks[i].startTime, "hh:mm a").isSameOrAfter(
+          moment(this.sortedTasks[i].startTime, "hh:mm a").isAfter(
             moment(this.sortedTasks[j].endTime, "hh:mm a")
           )
         ) {
