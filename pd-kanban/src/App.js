@@ -11,7 +11,7 @@ import WeightedIntervalScheduling from "./utils/weightedIntervalScheduling";
 import moment from "moment";
 import Cronometer from "./components/Cronometer";
 import Navbar from "./components/Navbar";
-
+import "./App.css";
 const tasksColumns = [
   {
     name: "Tasks",
@@ -159,16 +159,16 @@ function App() {
           alignItems="center"
           style={{ gap: "2rem" }}
         >
-          <Typography 
-            fontSize="20px" 
-            fontWeight="600" 
+          <Typography
+            fontSize="20px"
+            fontWeight="600"
             backgroundColor="#DCDCDC"
             padding="0.8rem"
             justifyContent="center"
             style={{
               borderRadius: "3px",
             }}
-            >
+          >
             Total Points Done: {points}
           </Typography>
 
@@ -207,15 +207,13 @@ function App() {
                             {...provided.droppableProps}
                             ref={provided.innerRef}
                             style={{
-                              background: snapshot.isDraggingOver
-                                ? "#D3D3D3"
-                                : "#C0C0C0",
                               padding: 8,
                               width: 250,
                               borderRadius: "7px",
                               overflowY: "auto",
                               height: 500,
                             }}
+                            className="container"
                           >
                             {column?.items?.length > 0 &&
                               column?.items?.map((item, index) => {
@@ -236,7 +234,8 @@ function App() {
                                     <TextField
                                       name="description"
                                       label="Description"
-                                      variant="outlined"
+                                      color="secondary"
+                                      variant="filled"
                                       required
                                     />
 
@@ -252,6 +251,8 @@ function App() {
                                           <TextField
                                             {...params}
                                             name="startTime"
+                                            color="secondary"
+                                            variant="filled"
                                           />
                                         )}
                                       />
@@ -259,7 +260,8 @@ function App() {
                                         name="weight"
                                         type="number"
                                         label="Weight"
-                                        variant="outlined"
+                                        color="secondary"
+                                        variant="filled"
                                         required
                                       />
                                     </LocalizationProvider>
@@ -275,6 +277,7 @@ function App() {
                                         aria-label="Temperature"
                                         defaultValue={1}
                                         valueLabelDisplay="on"
+                                        color="secondary"
                                         step={1}
                                         marks
                                         min={1}
@@ -284,6 +287,7 @@ function App() {
                                     <Button
                                       type="submit"
                                       variant="contained"
+                                      color="secondary"
                                       fullWidth
                                     >
                                       Insert task
@@ -306,11 +310,11 @@ function App() {
                                         tasks.findSolution(
                                           column0Items.length - 1
                                         );
-                                        console.log(
-                                          "PRIOR",
-                                          tasks.priorizedTasks
-                                        );
-                                        columns[1].items = tasks.priorizedTasks;
+
+                                        columns[1].items = [
+                                          ...columns[1].items,
+                                          ...tasks.priorizedTasks,
+                                        ].reverse();
                                         setColumns([...columns]);
                                       }}
                                       variant="contained"
